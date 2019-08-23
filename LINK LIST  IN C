@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node 
+{
+  int info;
+  struct node *next;
+};
+
+ typedef struct node NODE;
+  NODE *Create (NODE *Start)
+ {
+  int n;
+  NODE*newnode,*prev;
+do{
+   newnode=(NODE*)malloc(sizeof(NODE));
+   printf("ENTER THE INFORMATION");
+   scanf("%d",&newnode->info);
+   newnode->next=NULL;
+if(Start==NULL)
+
+  Start=newnode;
+
+else
+
+  prev->next=newnode;
+  prev=newnode;
+  
+printf("DO U WANT TO CONT....");
+scanf("%d",&n);
+}while(n!=0);
+return Start;
+}
+
+void Display(NODE*Start)
+{
+while(Start!=NULL)
+{
+  printf("%d",Start->info);
+  Start=Start->next;
+}
+}
+
+void main()
+{
+  NODE*Start;
+  Start= Create(Start);
+  Display(Start);
+  
+}
+ 
